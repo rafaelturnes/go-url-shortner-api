@@ -45,7 +45,6 @@
       {{end}}
 
       {{if .Success}}
-      <!-- <h1 class="text-3xl font-bold underline">New short url created <a href="{{.Short}}">{{.Short}}</a></h1> -->
       <div>
         <div class="flex items-center justify-between">
           <label for="short" class="block text-sm font-medium leading-6 text-gray-900">Short URL</label>
@@ -70,22 +69,6 @@
       </div>
     </div>
   </div>
-
-  <!-- <div class="basis-full mx-auto">
-    
-    <h1 class="text-3xl font-bold text-fuchsia-500">Generate</h1>
-    <form method="post" action="/new">
-        <label>URL:</label><br />
-        <input type="text" name="url"><br />        
-        <input type="submit" value="Submit"/>
-    </form>
-    </div>
-
-    {{if .Success}}
-    <h1 class="text-3xl font-bold underline">New short url created <a href="{{.Short}}">{{.Short}}</a></h1>
-    {{end}} -->
-
-
   <script>function copyToClipboard() {
       var copyText = document.getElementById("short");
       copyText.select();
