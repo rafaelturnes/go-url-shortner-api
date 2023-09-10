@@ -84,6 +84,11 @@ func main() {
 		tmpl.ExecuteTemplate(w, "404.html", Page404{Item: "Page"})
 	})
 
+	r.Get("/static/*", func(w http.ResponseWriter, r *http.Request) {
+		fs := http.StripPrefix("/static", http.FileServer(http.Dir("dist")))
+		fs.ServeHTTP(w, r)
+	})
+
 	walkFunc := func(method string, route string, handler http.Handler, middlewares ...func(http.Handler) http.Handler) error {
 		route = strings.Replace(route, "/*/", "/", -1)
 		fmt.Printf("%s %s\n", method, route)
